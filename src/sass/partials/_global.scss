@@ -1,8 +1,12 @@
 body {
-    margin: 0;
-    background: $color-light;
-    font-family: $font-main;
-    font-size: 14px;
-    font-weight: $font-normal;
-    color: $color-dark;
+  margin: 0;
+  background: $color-dark;
+  font-family: $font-main;
+  font-size: 14px;
+  font-weight: $font-normal;
+  color: $color-dark;
+}
+
+.container {
+  margin-bottom: 30px;
 }

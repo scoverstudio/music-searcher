@@ -1,16 +1,21 @@
+h1 {
+  font-family: $font-main;
+  font-size: 135px;
+  text-transform: uppercase;
+  color: $color-light;
+  margin: 0;
+  text-align: center;
+}
 
-.h1 {
-    font-family: $font-main;
-    font-size: 26px;
-    text-transform: uppercase;
-  }
-  
-  .h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-  
-  .h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-  }
+h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $color-light;
+  margin: 0;
+}
+
+h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $color-light;
+}

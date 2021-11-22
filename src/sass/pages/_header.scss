@@ -1,0 +1,62 @@
+.header {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  box-shadow: -10px black;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2)
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 95%);
+  }
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    h1 {
+      letter-spacing: 100px;
+      margin-left: 100px;
+    }
+
+    h2 {
+      line-height: 40px;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+.navigation {
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+    max-width: 30%;
+    text-align: center;
+    padding: 30px 0;
+
+    a {
+      font-size: 20px;
+    }
+  }
+}
