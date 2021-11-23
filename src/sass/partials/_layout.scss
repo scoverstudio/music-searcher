@@ -1,1 +1,12 @@
 // layout
+#pages > * {
+  display: none;
+}
+
+#pages > .active {
+  display: block;
+}
+
+#pages {
+  padding-bottom: 80px;
+}

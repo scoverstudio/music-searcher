@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,12 +42,60 @@
             </div>
         </div>
     </nav>
+    <div id="pages">
+        <section id="home">
+            <div class="music-list container" id="music-list">
+            </div>
+        </section>
+        <section id="search">
+            <div class="music-search container" id="music-search"></div>
+        </section>
+        <section id="discover">
+            <div class="music-discover container" id="music-discover"></div>
+        </section>
+    </div>
 
-    <script id="template-home-widget" type="text/x-handlebars-template"></script>
+    <section id="subscribe" class="subscribe">
+        <h2>subscribe <span>now</span></h2>
+        <div class="content">
+            <div class="button">
+                <button>Join Now</button>
+            </div>
+            <div class="subscribe-image">
+                <h3>Dean</h3>
+                <h3>Hen<span>son</span></h3>
+            </div>
+            <div class="content-end">
+                <div class="content-text">
+                    <h4>New album</h4>
+                    <p>Available only for subscribers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>All rights reserved</p>
+    </footer>
+
+    <script id="template-home-widget" type="text/x-handlebars-template">
+        <div class="song">
+            <div class="title-name"><h3>{{author}} - {{title}}</h3></div>
+            <div class="gap-example player">
+                <audio>
+                    <source src="songs/{{filename}}" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="special">
+                <div class="categories"><h4>Categories: {{categories}}</h4></div>
+                <div class="ranking"><h4>#{{ranking}} in the ranking</h4></div>
+            </div>
+        </div>
+    </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-    <script src="/src/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
+    <script src="js/app.js" type="module"></script>
 </body>
 
 </html>

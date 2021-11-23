@@ -1,12 +1,13 @@
 body {
   margin: 0;
-  background: $color-dark;
+  background: $color-dark-gray;
   font-family: $font-main;
   font-size: 14px;
   font-weight: $font-normal;
-  color: $color-dark;
+  color: $color-light;
+  overflow-x: hidden;
 }
 
 .container {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }

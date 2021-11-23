@@ -1,0 +1,196 @@
+.header {
+  max-width: 2560px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  box-shadow: -10px black;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2)
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba($color-dark-gray, 1) 95%
+      );
+  }
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
+
+    h1 {
+      letter-spacing: 100px;
+      margin-left: 40px;
+      width: 100%;
+    }
+
+    h2 {
+      line-height: 60px;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+.navigation {
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 300px;
+    text-align: center;
+    padding: 30px 0;
+
+    a {
+      font-size: 30px;
+      width: 150px;
+      color: $color-gray;
+      letter-spacing: 1px;
+
+      &.active {
+        color: $color-light;
+      }
+    }
+  }
+}
+
+.subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 1050px;
+  background-image: url("../../images/subscribe.jpg");
+  background-position: center;
+  background-size: cover;
+
+  h2 {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    font-size: 100px;
+    font-weight: normal;
+    letter-spacing: 15px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 1200px;
+    flex-direction: row;
+
+    .button {
+      width: 750px;
+
+      button {
+        padding: 40px 50px;
+        margin-bottom: 100px;
+        font-size: 40px;
+        font-family: $font-main;
+        font-weight: bold;
+        color: $color-light;
+        background-color: $color-primary;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 10px;
+        letter-spacing: 5px;
+      }
+    }
+
+    .subscribe-image {
+      position: relative;
+      width: 450px;
+      height: 600px;
+      background-image: url("../../images/artist.jpg");
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      box-shadow: 0px 1px 80px 11px rgba($color-dark-gray, 1);
+
+      h3 {
+        font-size: 100px;
+        letter-spacing: 15px;
+      }
+
+      h3:nth-child(1) {
+        position: absolute;
+        bottom: 30%;
+        left: -280px;
+      }
+
+      h3:nth-child(2) {
+        position: absolute;
+        bottom: 15%;
+        left: -215px;
+
+        span {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.content-end {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  .content-text {
+    position: absolute;
+    right: -40px;
+    text-align: right;
+
+    h4 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 40px;
+      text-transform: none;
+    }
+  }
+}
+
+footer {
+  height: 65px;
+
+  p {
+    text-align: center;
+    line-height: 65px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+}
