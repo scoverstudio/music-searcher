@@ -1,9 +1,9 @@
 // layout
-#pages > * {
+#pages>* {
   display: none;
 }
 
-#pages > .active {
+#pages>.active {
   display: block;
 }
 

@@ -48,7 +48,15 @@
             </div>
         </section>
         <section id="search">
-            <div class="music-search container" id="music-search"></div>
+            <div class="searchInput">
+                <h2 class="title-search">Search</h2>
+                <h3>Name</h3>
+                <input type="text">
+                <a href="#">Search</a>
+            </div>
+            <h4 class="numberOfFound">We have found <span></span> songs...</h4>
+            <div class="music-list music-search container" id="music-search">
+            </div>
         </section>
         <section id="discover">
             <div class="music-discover container" id="music-discover"></div>
@@ -59,7 +67,7 @@
         <h2>subscribe <span>now</span></h2>
         <div class="content">
             <div class="button">
-                <button>Join Now</button>
+                <a href="join-now">Join Now</a>
             </div>
             <div class="subscribe-image">
                 <h3>Dean</h3>
@@ -79,6 +87,21 @@
 
     <script id="template-home-widget" type="text/x-handlebars-template">
         <div class="song">
+            <div class="title-name"><h3>{{author}} - {{title}}</h3></div>
+            <div class="gap-example player">
+                <audio>
+                    <source src="songs/{{filename}}" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="special">
+                <div class="categories"><h4>Categories: {{categories}}</h4></div>
+                <div class="ranking"><h4>#{{ranking}} in the ranking</h4></div>
+            </div>
+        </div>
+    </script>
+
+    <script id="template-search-widget" type="text/x-handlebars-template">
+        <div class="song search">
             <div class="title-name"><h3>{{author}} - {{title}}</h3></div>
             <div class="gap-example player">
                 <audio>

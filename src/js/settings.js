@@ -1,16 +1,23 @@
 export const select = {
     templateOf: {
-        homeWidget: '#template-home-widget'
+        homeWidget: '#template-home-widget',
+        searchWidget: '#template-search-widget'
     },
     containerOf: {
         pages: '#pages',
         homeSong: '#home .music-list',
-        search: '#search',
+        search: '#search .music-search',
         discover: '#discover'
     },
     nav: {
         links: '.main-nav a',
     },
+    search: {
+        searchedSong: '.song',
+        numberOfSongs: '.numberOfFound span',
+        input: '.searchInput input',
+        title: '.search h3',
+    }
 }
 
 export const settings = {
@@ -38,5 +45,8 @@ export const classNames = {
 export const templates = {
     homeSong: Handlebars.compile(
         document.querySelector(select.templateOf.homeWidget).innerHTML
+    ),
+    search: Handlebars.compile(
+        document.querySelector(select.templateOf.searchWidget).innerHTML
     ),
 }

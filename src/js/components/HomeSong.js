@@ -6,7 +6,7 @@ import {
     templates
 } from "../settings.js";
 
-class Home {
+class HomeSong {
     constructor(id, data) {
         const thisHome = this;
 
@@ -27,4 +27,4 @@ class Home {
     }
 }
 
-export default Home;
+export default HomeSong;

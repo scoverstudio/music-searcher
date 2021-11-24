@@ -4,6 +4,7 @@ import {
     settings
 } from "./settings.js";
 import HomeSong from "./components/HomeSong.js";
+import Search from "./components/Search.js";
 
 {
 
@@ -39,13 +40,14 @@ import HomeSong from "./components/HomeSong.js";
             }
         },
 
-        initHomeSong: function () {
+        initSong: function () {
             const thisApp = this;
 
             for (let songData in thisApp.data.songs) {
                 new HomeSong(thisApp.data.songs[songData].id, thisApp.data.songs[songData])
+                new Search(thisApp.data.songs[songData].id, thisApp.data.songs[songData])
             }
-            
+
             GreenAudioPlayer.init({
                 selector: '.player',
                 stopOthersOnPlay: true
@@ -64,7 +66,7 @@ import HomeSong from "./components/HomeSong.js";
                 })
                 .then(function (parsedResponse) {
                     thisApp.data.songs = parsedResponse;
-                    thisApp.initHomeSong();
+                    thisApp.initSong();
                 });
 
         },
