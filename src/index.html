@@ -101,8 +101,8 @@
     </script>
 
     <script id="template-search-widget" type="text/x-handlebars-template">
-        <div class="song search">
-            <div class="title-name"><h3>{{author}} - {{title}}</h3></div>
+        <div  class="song search">
+            <div class="title-name"><h3 id="title-name">{{author}} - {{title}}</h3></div>
             <div class="gap-example player">
                 <audio>
                     <source src="songs/{{filename}}" type="audio/mpeg">
@@ -114,7 +114,6 @@
             </div>
         </div>
     </script>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>

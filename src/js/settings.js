@@ -13,7 +13,7 @@ export const select = {
         links: '.main-nav a',
     },
     search: {
-        searchedSong: '.song',
+        searchedSong: '.music-search .song',
         numberOfSongs: '.numberOfFound span',
         input: '.searchInput input',
         title: '.search h3',
