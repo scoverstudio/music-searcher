@@ -45,8 +45,8 @@ import Search from "./components/Search.js";
 
             for (let songData in thisApp.data.songs) {
                 new HomeSong(thisApp.data.songs[songData].id, thisApp.data.songs[songData])
-                new Search(thisApp.data.songs[songData].id, thisApp.data.songs[songData])
             }
+            new Search(thisApp.data.songs);
 
             GreenAudioPlayer.init({
                 selector: '.player',

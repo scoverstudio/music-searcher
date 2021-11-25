@@ -7,17 +7,14 @@ import {
 } from "../utils.js";
 
 class Search {
-    constructor(id, data) {
+    constructor(songList) {
         const thisSearch = this;
 
-        thisSearch.id = id;
-        thisSearch.data = data;
-        console.log(thisSearch.data);
+        thisSearch.songs = songList;
+        console.log(thisSearch.songs);
 
-
-
-        thisSearch.getElements();
         thisSearch.renderSongs();
+        thisSearch.getElements();
         thisSearch.searchSongs();
     }
 
@@ -28,16 +25,19 @@ class Search {
         thisSearch.input = document.querySelector(select.search.input);
         thisSearch.songTitles = document.querySelectorAll(select.search.title);
         thisSearch.numberOfFound = document.querySelector(select.search.numberOfSongs);
+        thisSearch.buttonSearch = document.querySelector(select.search.button);
     }
 
     renderSongs() {
         const thisSearch = this;
 
-        const generateHTML = templates.search(thisSearch.data);
-        thisSearch.element = utils.createDOMFromHTML(generateHTML);
+        for (let song of thisSearch.songs) {
+            const generateHTML = templates.search(song);
+            thisSearch.element = utils.createDOMFromHTML(generateHTML);
 
-        const songContainer = document.querySelector(select.containerOf.search);
-        songContainer.appendChild(thisSearch.element);
+            const songContainer = document.querySelector(select.containerOf.search);
+            songContainer.appendChild(thisSearch.element);
+        }
     }
 
     searchSongs() {
@@ -47,26 +47,28 @@ class Search {
             const currentWord = event.target.value.toLowerCase();
             let numberOfFound = 0;
             const songs = [];
+
             console.log(thisSearch.songTitles);
-            thisSearch.songTitles.forEach(element => {
-                const song = element.parentElement.parentElement;
+            thisSearch.buttonSearch.addEventListener('click', function (event) {
+                event.preventDefault();
 
-                song.style.display = 'none';
+                thisSearch.songTitles.forEach(element => {
+                    const song = element.parentElement.parentElement;
 
-                // if (element.textContent.toLowerCase().indexOf(currentWord) !== -1) {
-                //     song.style.display = 'block'
-                // } else {
-                //     song.style.display = 'none'
-                // }
-                // if (song.style.display === 'block') {
-                //     songs.push(song);
-                // } else {}
-                // thisSearch.numberOfFound.textContent = songs.length;
-                // console.log(songs);
-            })
+                    song.style.display = 'none';
+
+                    if (element.textContent.toLowerCase().indexOf(currentWord) !== -1) {
+                        song.style.display = 'block'
+                    } else {
+                        song.style.display = 'none'
+                    }
+                    if (song.style.display === 'block') {
+                        songs.push(song);
+                    } else {}
+                    thisSearch.numberOfFound.textContent = songs.length;
+                })
+            });
         });
-
-
     }
 }
 export default Search;
