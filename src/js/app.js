@@ -48,10 +48,7 @@ import Search from "./components/Search.js";
             }
             new Search(thisApp.data.songs);
 
-            GreenAudioPlayer.init({
-                selector: '.player',
-                stopOthersOnPlay: true
-            });
+
         },
 
         initData: function () {
@@ -67,6 +64,10 @@ import Search from "./components/Search.js";
                 .then(function (parsedResponse) {
                     thisApp.data.songs = parsedResponse;
                     thisApp.initSong();
+                    GreenAudioPlayer.init({
+                        selector: '.player',
+                        stopOthersOnPlay: true
+                    });
                 });
 
         },

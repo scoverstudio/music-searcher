@@ -59,7 +59,7 @@ class Search {
             songContainer.appendChild(thisSearch.element);
         }
         GreenAudioPlayer.init({
-            selector: '.player',
+            selector: '.player-search',
             stopOthersOnPlay: true
         });
     }
