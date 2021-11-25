@@ -7,10 +7,9 @@ import {
 } from "../settings.js";
 
 class HomeSong {
-    constructor(id, data) {
+    constructor(data) {
         const thisHome = this;
 
-        thisHome.id = id;
         thisHome.data = data;
 
         thisHome.renderMusic();

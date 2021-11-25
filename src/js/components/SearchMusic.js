@@ -6,7 +6,7 @@ import {
     utils
 } from "../utils.js";
 
-class Search {
+class SearchMusic {
     constructor(songList) {
         const thisSearch = this;
 
@@ -24,8 +24,6 @@ class Search {
         thisSearch.numberOfFound = document.querySelector(select.search.numberOfSongs);
         thisSearch.buttonSearch = document.querySelector(select.search.button);
     }
-
-
 
     searchSongs() {
         const thisSearch = this;
@@ -64,4 +62,4 @@ class Search {
         });
     }
 }
-export default Search;
+export default SearchMusic;
