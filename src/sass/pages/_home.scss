@@ -19,12 +19,42 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-weight: normal;
     max-width: 425px;
     margin: 0 auto;
     padding-top: 20px;
+
+    .categories h4,
+    .ranking h4 {
+      font-weight: normal;
+    }
   }
 
   .song {
     padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 414px) {
+  .music-list {
+    .title-name {
+      font-size: 18px;
+    }
+
+    .green-audio-player {
+      width: 250px;
+    }
+
+    .special {
+      max-width: 240px;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      .categories h4,
+      .ranking h4 {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
   }
 }

@@ -21,12 +21,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2)
-      linear-gradient(
-        to bottom,
+    background: rgba(0, 0, 0, 0.2) linear-gradient(to bottom,
         rgba(0, 0, 0, 0),
-        rgba($color-dark-gray, 1) 95%
-      );
+        rgba($color-dark-gray, 1) 95%);
   }
 
   .text {
@@ -192,5 +189,119 @@ footer {
     line-height: 65px;
     letter-spacing: 2px;
     margin: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .hero {
+    .text {
+      h1 {
+        letter-spacing: 10px;
+        font-size: 65px;
+        margin: 0;
+        margin-right: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      h2 {
+        line-height: 30px;
+        letter-spacing: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .navigation {
+    .main-nav {
+      a {
+        font-size: 20px;
+        width: 150px;
+        color: $color-gray;
+        letter-spacing: 1px;
+
+        &.active {
+          color: $color-light;
+        }
+      }
+    }
+  }
+
+  .subscribe {
+    height: 568px;
+
+    h2 {
+      font-size: 45px;
+      top: 25px;
+      letter-spacing: 10px;
+    }
+
+    .content {
+      width: 320px;
+
+      .button {
+        width: 170px;
+        text-align: center;
+
+        a {
+          display: inline-block;
+          padding: 10px;
+          margin-bottom: 20px;
+          width: 70%;
+          font-size: 20px;
+          letter-spacing: 2.5px;
+        }
+      }
+
+      .subscribe-image {
+        width: 150px;
+        height: 300px;
+
+        h3 {
+          font-size: 50px;
+          letter-spacing: 15px;
+        }
+
+        h3:nth-child(1) {
+          bottom: 40%;
+          left: -160px;
+        }
+
+        h3:nth-child(2) {
+          bottom: 28%;
+          left: -120px;
+        }
+      }
+    }
+  }
+
+  .content-end {
+    letter-spacing: 2.5px;
+
+    .content-text {
+      text-align: center;
+      margin-top: 15px;
+      width: 100%;
+      right: 0;
+
+      h4 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  footer {
+    height: 5vh;
+
+    p {
+      text-align: center;
+      line-height: 65px;
+      letter-spacing: 2px;
+      margin: 0;
+    }
   }
 }
