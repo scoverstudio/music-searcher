@@ -43,36 +43,7 @@
   }
 }
 
-@media (min-width: 320px) {
-  .music-discover {
-    h3 {
-      margin-bottom: 60px;
-    }
-
-    #title-name {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .green-audio-player {
-      width: 250px;
-    }
-
-    .special {
-      max-width: 240px;
-      margin: 0 auto;
-      padding-top: 20px;
-
-      .categories h4,
-      .ranking h4 {
-        font-size: 15px;
-        text-align: center;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
+@media (max-width: 414px) {
   .music-discover {
     h3 {
       margin-bottom: 60px;
