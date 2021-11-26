@@ -1,13 +1,14 @@
 export const select = {
     templateOf: {
         homeWidget: '#template-home-widget',
-        searchWidget: '#template-search-widget'
+        searchWidget: '#template-search-widget',
+        discoverWidget: '#template-discover-widget'
     },
     containerOf: {
         pages: '#pages',
         homeSong: '#home .music-list',
         search: '#search .music-search',
-        discover: '#discover'
+        discover: '#discover .music-discover'
     },
     nav: {
         links: '.main-nav a',
@@ -19,7 +20,7 @@ export const select = {
         title: '.search h3',
         button: '.searchInput a',
     }
-}
+};
 
 export const settings = {
     db: {
@@ -32,7 +33,7 @@ export const settings = {
         categories: 'categories',
         ranking: 'ranking'
     }
-}
+};
 
 export const classNames = {
     pages: {
@@ -50,4 +51,7 @@ export const templates = {
     search: Handlebars.compile(
         document.querySelector(select.templateOf.searchWidget).innerHTML
     ),
-}
+    discoverSong: Handlebars.compile(
+        document.querySelector(select.templateOf.discoverWidget).innerHTML
+    )
+};

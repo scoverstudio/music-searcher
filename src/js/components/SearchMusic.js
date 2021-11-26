@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
     select,
     templates
@@ -31,7 +32,7 @@ class SearchMusic {
         thisSearch.buttonSearch.addEventListener('click', function (event) {
             event.preventDefault();
             const currentWord = thisSearch.input.value;
-            const filteredSongs = []
+            const filteredSongs = [];
 
             document.getElementById('music-search').innerHTML = "";
 

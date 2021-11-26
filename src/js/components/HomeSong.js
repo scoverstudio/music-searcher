@@ -16,7 +16,7 @@ class HomeSong {
     }
 
     renderMusic() {
-        const thisHome = this
+        const thisHome = this;
 
         const generateHTML = templates.homeSong(thisHome.data);
         thisHome.element = utils.createDOMFromHTML(generateHTML);

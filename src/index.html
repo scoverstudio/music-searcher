@@ -77,7 +77,10 @@
             </div>
         </section>
         <section id="discover">
-            <div class="music-discover container" id="music-discover"></div>
+            <div class="music-discover container" id="music-discover">
+                <h2 class="discover-title">discover</h2>
+                <h3>Give it a try!</h3>
+            </div>
         </section>
     </div>
 
@@ -104,6 +107,21 @@
         <div  class="song search">
             <div class="title-name"><h3 id="title-name">{{author}} - {{title}}</h3></div>
             <div class="gap-example player-search">
+                <audio>
+                    <source src="songs/{{filename}}" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="special">
+                <div class="categories"><h4>Categories: {{categories}}</h4></div>
+                <div class="ranking"><h4>#{{ranking}} in the ranking</h4></div>
+            </div>
+        </div>
+    </script>
+
+    <script id="template-discover-widget" type="text/x-handlebars-template">
+        <div  class="song discover">
+            <div class="title-name"><h3 id="title-name">{{author}} - {{title}}</h3></div>
+            <div class="gap-example player-discover">
                 <audio>
                     <source src="songs/{{filename}}" type="audio/mpeg">
                 </audio>

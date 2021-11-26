@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
     classNames,
     select,
@@ -5,6 +6,7 @@ import {
 } from "./settings.js";
 import HomeSong from "./components/HomeSong.js";
 import SearchMusic from "./components/SearchMusic.js";
+import Discover from "./components/Discover.js";
 
 {
 
@@ -44,7 +46,7 @@ import SearchMusic from "./components/SearchMusic.js";
             const thisApp = this;
 
             for (let songData in thisApp.data.songs) {
-                new HomeSong(thisApp.data.songs[songData])
+                new HomeSong(thisApp.data.songs[songData]);
             }
         },
 
@@ -52,6 +54,12 @@ import SearchMusic from "./components/SearchMusic.js";
             const thisApp = this;
 
             new SearchMusic(thisApp.data.songs);
+        },
+
+        initDiscoverSong: function () {
+            const thisApp = this;
+
+            new Discover(thisApp.data.songs);
         },
 
         initData: function () {
@@ -68,6 +76,7 @@ import SearchMusic from "./components/SearchMusic.js";
                     thisApp.data.songs = parsedResponse;
                     thisApp.initHomeSong();
                     thisApp.initSearchSongs();
+                    thisApp.initDiscoverSong();
 
                     GreenAudioPlayer.init({
                         selector: '.player',
@@ -83,6 +92,6 @@ import SearchMusic from "./components/SearchMusic.js";
             thisApp.initPages();
             thisApp.initData();
         }
-    }
+    };
     app.init();
 }

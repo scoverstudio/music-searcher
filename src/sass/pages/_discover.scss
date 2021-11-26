@@ -1,0 +1,44 @@
+.music-discover {
+  max-width: 450px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+
+  .discover-title{
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 45px;
+    font-weight: normal;
+    margin-bottom: 60px;
+  }
+  
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 60px;
+  }
+
+  .title-name {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .green-audio-player {
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  .special {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 425px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .song {
+    padding-bottom: 60px;
+  }
+}
