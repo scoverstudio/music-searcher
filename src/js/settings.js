@@ -16,7 +16,8 @@ export const select = {
     search: {
         searchedSong: '.music-search .song',
         numberOfSongs: '.numberOfFound span',
-        input: '.searchInput input',
+        inputName: '.searchInput .input-name',
+        inputCategory: '.searchInput .input-category',
         title: '.search h3',
         button: '.searchInput a',
     }

@@ -21,7 +21,8 @@ class SearchMusic {
         const thisSearch = this;
 
         thisSearch.songsDOM = document.querySelectorAll(select.search.searchedSong);
-        thisSearch.inputName = document.querySelector(select.search.input);
+        thisSearch.inputName = document.querySelector(select.search.inputName);
+        thisSearch.inputCategory = document.querySelector(select.search.inputCategory);
         thisSearch.numberOfFound = document.querySelector(select.search.numberOfSongs);
         thisSearch.buttonSearch = document.querySelector(select.search.button);
     }
@@ -31,7 +32,8 @@ class SearchMusic {
 
         thisSearch.buttonSearch.addEventListener('click', function (event) {
             event.preventDefault();
-            const currentWord = thisSearch.inputName.value;
+            const currentWordOfName = thisSearch.inputName.value;
+            const currentWordOfCategory = thisSearch.inputCategory.value;
             const filteredSongs = [];
             thisSearch.numberOfFound.textContent = filteredSongs.length;
 
@@ -40,8 +42,19 @@ class SearchMusic {
             if (thisSearch.inputName.value !== "") {
                 for (let song of thisSearch.songs) {
                     const title = song.title;
-                    if (title.toLowerCase().indexOf(currentWord) !== -1) {
+                    if (title.toLowerCase().indexOf(currentWordOfName) !== -1) {
                         filteredSongs.push(song);
+                    }
+                }
+                thisSearch.numberOfFound.textContent = filteredSongs.length;
+                thisSearch.renderSongs(filteredSongs);
+            }
+            if (thisSearch.inputCategory.value !== "") {
+                for (let song of thisSearch.songs) {
+                    for (let category of song.categories) {
+                        if (category.toLowerCase().indexOf(currentWordOfCategory) !== -1) {
+                            filteredSongs.push(song);
+                        }
                     }
                 }
                 thisSearch.numberOfFound.textContent = filteredSongs.length;
