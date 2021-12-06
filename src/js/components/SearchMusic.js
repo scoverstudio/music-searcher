@@ -21,7 +21,7 @@ class SearchMusic {
         const thisSearch = this;
 
         thisSearch.songsDOM = document.querySelectorAll(select.search.searchedSong);
-        thisSearch.input = document.querySelector(select.search.input);
+        thisSearch.inputName = document.querySelector(select.search.input);
         thisSearch.numberOfFound = document.querySelector(select.search.numberOfSongs);
         thisSearch.buttonSearch = document.querySelector(select.search.button);
     }
@@ -31,19 +31,22 @@ class SearchMusic {
 
         thisSearch.buttonSearch.addEventListener('click', function (event) {
             event.preventDefault();
-            const currentWord = thisSearch.input.value;
+            const currentWord = thisSearch.inputName.value;
             const filteredSongs = [];
+            thisSearch.numberOfFound.textContent = filteredSongs.length;
 
             document.getElementById('music-search').innerHTML = "";
 
-            for (let song of thisSearch.songs) {
-                const title = song.title;
-                if (title.toLowerCase().indexOf(currentWord) !== -1) {
-                    filteredSongs.push(song);
+            if (thisSearch.inputName.value !== "") {
+                for (let song of thisSearch.songs) {
+                    const title = song.title;
+                    if (title.toLowerCase().indexOf(currentWord) !== -1) {
+                        filteredSongs.push(song);
+                    }
                 }
+                thisSearch.numberOfFound.textContent = filteredSongs.length;
+                thisSearch.renderSongs(filteredSongs);
             }
-            thisSearch.numberOfFound.textContent = filteredSongs.length;
-            thisSearch.renderSongs(filteredSongs);
         });
     }
 
@@ -63,4 +66,7 @@ class SearchMusic {
         });
     }
 }
+
+
+
 export default SearchMusic;
