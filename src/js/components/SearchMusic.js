@@ -39,26 +39,30 @@ class SearchMusic {
 
             document.getElementById('music-search').innerHTML = "";
 
-            if (thisSearch.inputName.value !== "") {
-                for (let song of thisSearch.songs) {
-                    const title = song.title;
-                    if (title.toLowerCase().indexOf(currentWordOfName) !== -1) {
-                        filteredSongs.push(song);
-                    }
-                }
-                thisSearch.numberOfFound.textContent = filteredSongs.length;
-                thisSearch.renderSongs(filteredSongs);
-            }
-            if (thisSearch.inputCategory.value !== "") {
-                for (let song of thisSearch.songs) {
-                    for (let category of song.categories) {
-                        if (category.toLowerCase().indexOf(currentWordOfCategory) !== -1) {
+            if (thisSearch.inputName.value !== "" && thisSearch.inputCategory.value !== "") {
+                alert("Uzupełnij tylko jedno pole!");
+            } else {
+                if (thisSearch.inputName.value !== "") {
+                    for (let song of thisSearch.songs) {
+                        const title = song.title;
+                        if (title.toLowerCase().indexOf(currentWordOfName) !== -1) {
                             filteredSongs.push(song);
                         }
                     }
+                    thisSearch.numberOfFound.textContent = filteredSongs.length;
+                    thisSearch.renderSongs(filteredSongs);
                 }
-                thisSearch.numberOfFound.textContent = filteredSongs.length;
-                thisSearch.renderSongs(filteredSongs);
+                if (thisSearch.inputCategory.value !== "") {
+                    for (let song of thisSearch.songs) {
+                        for (let category of song.categories) {
+                            if (category.toLowerCase().indexOf(currentWordOfCategory) !== -1) {
+                                filteredSongs.push(song);
+                            }
+                        }
+                    }
+                    thisSearch.numberOfFound.textContent = filteredSongs.length;
+                    thisSearch.renderSongs(filteredSongs);
+                }
             }
         });
     }
@@ -79,7 +83,5 @@ class SearchMusic {
         });
     }
 }
-
-
 
 export default SearchMusic;
