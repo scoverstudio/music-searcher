@@ -23,7 +23,8 @@
         ]
     },
     "globals": {
-        "Handlebars": false
+        "Handlebars": false,
+        "GreenAudioPlayer": false
     }
 
 }

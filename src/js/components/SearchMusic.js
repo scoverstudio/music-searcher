@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import {
     select,
     templates
@@ -29,41 +28,25 @@ class SearchMusic {
 
     searchSongs() {
         const thisSearch = this;
+        const ifMatches = (source, target) => source.toLowerCase().indexOf(target.toLowerCase()) !== -1;
 
         thisSearch.buttonSearch.addEventListener('click', function (event) {
             event.preventDefault();
-            const currentWordOfName = thisSearch.inputName.value;
-            const currentWordOfCategory = thisSearch.inputCategory.value;
-            const filteredSongs = [];
-            thisSearch.numberOfFound.textContent = filteredSongs.length;
+            const titlePhrase = thisSearch.inputName.value;
+            const categoryPhrase = thisSearch.inputCategory.value;
+            thisSearch.numberOfFound.parentNode.classList.add('active');
 
-            document.getElementById('music-search').innerHTML = "";
+            document.querySelector(select.homeSong.songList).innerHTML = "";
+            let filteredSongs = (titlePhrase || categoryPhrase) ? thisSearch.songs : [];
 
-            if (thisSearch.inputName.value !== "" && thisSearch.inputCategory.value !== "") {
-                alert("Uzupełnij tylko jedno pole!");
-            } else {
-                if (thisSearch.inputName.value !== "") {
-                    for (let song of thisSearch.songs) {
-                        const title = song.title;
-                        if (title.toLowerCase().indexOf(currentWordOfName) !== -1) {
-                            filteredSongs.push(song);
-                        }
-                    }
-                    thisSearch.numberOfFound.textContent = filteredSongs.length;
-                    thisSearch.renderSongs(filteredSongs);
-                }
-                if (thisSearch.inputCategory.value !== "") {
-                    for (let song of thisSearch.songs) {
-                        for (let category of song.categories) {
-                            if (category.toLowerCase().indexOf(currentWordOfCategory) !== -1) {
-                                filteredSongs.push(song);
-                            }
-                        }
-                    }
-                    thisSearch.numberOfFound.textContent = filteredSongs.length;
-                    thisSearch.renderSongs(filteredSongs);
-                }
+            if (titlePhrase) {
+                filteredSongs = filteredSongs.filter(song => ifMatches(song.title, titlePhrase));
             }
+            if (categoryPhrase) {
+                filteredSongs = filteredSongs.filter(song => song.categories.some(category => ifMatches(category, categoryPhrase)));
+            }
+            thisSearch.numberOfFound.textContent = filteredSongs.length;
+            thisSearch.renderSongs(filteredSongs);
         });
     }
 

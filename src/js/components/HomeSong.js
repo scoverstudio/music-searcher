@@ -8,21 +8,21 @@ import {
 
 class HomeSong {
     constructor(data) {
-        const thisHome = this;
+        const thisSong = this;
 
-        thisHome.data = data;
+        thisSong.data = data;
 
-        thisHome.renderMusic();
+        thisSong.renderMusic();
     }
 
     renderMusic() {
-        const thisHome = this;
+        const thisSong = this;
 
-        const generateHTML = templates.homeSong(thisHome.data);
-        thisHome.element = utils.createDOMFromHTML(generateHTML);
+        const generateHTML = templates.homeSong(thisSong.data);
+        thisSong.element = utils.createDOMFromHTML(generateHTML);
 
         const songContainer = document.querySelector(select.containerOf.homeSong);
-        songContainer.appendChild(thisHome.element);
+        songContainer.appendChild(thisSong.element);
     }
 }
 

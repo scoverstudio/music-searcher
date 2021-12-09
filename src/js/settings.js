@@ -1,3 +1,18 @@
+const baseUrl = '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : '');
+
+export const settings = {
+    db: {
+        url: `${baseUrl}/songs`,
+        songs: 'songs',
+        id: 'id',
+        title: 'title',
+        author: 'author',
+        fileName: 'filename',
+        categories: 'categories',
+        ranking: 'ranking',
+    }
+};
+
 export const select = {
     templateOf: {
         homeWidget: '#template-home-widget',
@@ -13,6 +28,9 @@ export const select = {
     nav: {
         links: '.main-nav a',
     },
+    homeSong: {
+        songList: '#music-search'
+    },
     search: {
         searchedSong: '.music-search .song',
         numberOfSongs: '.numberOfFound span',
@@ -20,19 +38,6 @@ export const select = {
         inputCategory: '.searchInput .input-category',
         title: '.search h3',
         button: '.searchInput a',
-    }
-};
-
-export const settings = {
-    db: {
-        url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
-        songs: 'songs',
-        id: 'id',
-        title: 'title',
-        author: 'author',
-        fileName: 'filename',
-        categories: 'categories',
-        ranking: 'ranking'
     }
 };
 

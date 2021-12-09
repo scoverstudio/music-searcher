@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import {
     classNames,
     select,
@@ -18,14 +17,9 @@ import Discover from "./components/Discover.js";
             thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
             const idFromHash = window.location.hash.replace('#/', '');
-            let pageMatchingHash = thisApp.pages[0].id;
 
-            for (let page of thisApp.pages) {
-                if (page.id == idFromHash) {
-                    pageMatchingHash = page.id;
-                    break;
-                }
-            }
+            const pageWithId = Array.from(thisApp.pages).find(page => page.id == idFromHash);
+            const pageMatchingHash = pageWithId && pageWithId.id || thisApp.pages[0].id;
 
             thisApp.activatePage(pageMatchingHash);
 
@@ -47,11 +41,11 @@ import Discover from "./components/Discover.js";
             const thisApp = this;
 
             for (let page of thisApp.pages) {
-                page.classList.toggle(classNames.pages.active, page.id == pageId);
+                page.classList.toggle(classNames.pages.active, page.id === pageId);
             }
 
             for (let link of thisApp.navLinks) {
-                link.classList.toggle(classNames.nav.active, link.getAttribute('href') == '#' + pageId);
+                link.classList.toggle(classNames.nav.active, link.getAttribute('href') === '#' + pageId);
             }
         },
 
@@ -78,10 +72,9 @@ import Discover from "./components/Discover.js";
         initData: function () {
             const thisApp = this;
 
-            const url = settings.db.url + '/' + settings.db.songs;
             thisApp.data = {};
 
-            fetch(url)
+            fetch(settings.db.url)
                 .then(function (rawResponse) {
                     return rawResponse.json();
                 })
